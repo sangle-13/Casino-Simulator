@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36811.4 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Casino_MonteCarlo_Sim", "Casino_MonteCarlo_Sim\Casino_MonteCarlo_Sim.vcxproj", "{487D5D95-90D7-479C-913E-0A899D005C30}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{487D5D95-90D7-479C-913E-0A899D005C30}.Debug|x64.ActiveCfg = Debug|x64
+		{487D5D95-90D7-479C-913E-0A899D005C30}.Debug|x64.Build.0 = Debug|x64
+		{487D5D95-90D7-479C-913E-0A899D005C30}.Debug|x86.ActiveCfg = Debug|Win32
+		{487D5D95-90D7-479C-913E-0A899D005C30}.Debug|x86.Build.0 = Debug|Win32
+		{487D5D95-90D7-479C-913E-0A899D005C30}.Release|x64.ActiveCfg = Release|x64
+		{487D5D95-90D7-479C-913E-0A899D005C30}.Release|x64.Build.0 = Release|x64
+		{487D5D95-90D7-479C-913E-0A899D005C30}.Release|x86.ActiveCfg = Release|Win32
+		{487D5D95-90D7-479C-913E-0A899D005C30}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5D60B0F1-DC8F-4F51-9EA6-E6C0ED9B220D}
+	EndGlobalSection
+EndGlobal

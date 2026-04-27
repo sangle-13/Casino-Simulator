@@ -1,0 +1,22 @@
+# --- Rác của Visual Studio  ---
+.vs/
+**/x64/
+**/bin/
+*.user
+*.suo
+*.db
+*.opendb
+
+# --- Dữ liệu và file tạm ---
+**/data/*.csv
+**/obj/
+
+# --- File Python rác ---
+__pycache__/
+*.pyc
+
+# --- Các file biên dịch khác ---
+*.obj
+*.pdb
+*.ilk
+*.exe
