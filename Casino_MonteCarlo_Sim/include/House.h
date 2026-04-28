@@ -44,4 +44,5 @@ public:
     bool isBankrupt() const {
         return balance <= 0;
     }
+
 };
