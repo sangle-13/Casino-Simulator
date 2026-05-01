@@ -15,7 +15,8 @@ public:
     // viết hàm updateBalance cập nhật số vốn nhà cái
     // viết hàm isBankrupt kiểm tra nhà cái phá sản chưa
     
-    // Lấy tên nhà cái
+   
+ // Lấy tên nhà cái
     const std::string& getName() const {
         return name;
     }
