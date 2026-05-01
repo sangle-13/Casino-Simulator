@@ -13,7 +13,8 @@ public:
         //đầu vào blance ( vốn hiện có) baseBet(tiền cược cố định) loses (số ván đã thua)
         // đầu ra 1 std::map với cửa cược và tiền cược.
         
-          // cược = baseBet * 2^losses
+          
+        // cược = baseBet * 2^losses
         double bet = baseBet * std::pow(2, losses);
 
         // không được vượt quá vốn
