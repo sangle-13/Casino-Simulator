@@ -29,7 +29,7 @@ $$EV = \frac{-125 + 75 + 30 + 3}{216} = \frac{-17}{216} \approx -0.0787$$
 
 ## 🚀 System Architecture
 
-* **Multi-threading Engine:** Maximizes CPU utilization by automatically load-balancing 100+ million rounds across 16 threads using a **No-Mutex** architecture.
+* **Multi-threading Engine:** Maximizes CPU utilization by dynamically load-balancing 100+ million rounds across all available CPU threads (auto-detected via `std::thread::hardware_concurrency()`) using a **No-Mutex** architecture.
     * **Thread-Safe RNG:** Implements `thread_local std::mt19937` to provide each thread with its own independent Random Number Generator. This eliminates resource contention (lock contention) entirely, allowing parallel threads to operate at maximum CPU velocity.
 * **OOP Design Patterns:**
     * **Strategy Pattern (`BettingStrategy.h`):** Dynamically injects betting logic. Evaluates two distinct strategies:
