@@ -13,7 +13,7 @@ public:
         amount = std::min(amount, balance);
 
         if (amount > 0) {
-            thread_local std::mt19937 rng(std::random_device{}());
+            static thread_local std::mt19937 rng(std::random_device{}());
             std::uniform_int_distribution<int> dist(0, 5);
 
             Symbol randomSymbol = static_cast<Symbol>(dist(rng));
@@ -29,7 +29,7 @@ public:
         std::map<Symbol, double> bets;
         double splitBet = std::min(baseBet, balance / 3.0);
         if (splitBet > 0) {
-            thread_local std::mt19937 rng(std::random_device{}());
+            static thread_local std::mt19937 rng(std::random_device{}());
 
             std::vector<Symbol> allSymbols = {
                 Symbol::BAU, Symbol::CUA, Symbol::TOM,
