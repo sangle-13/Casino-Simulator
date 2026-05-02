@@ -16,12 +16,25 @@ public:
     Player(const std::string& n, double bal, double bBet, std::unique_ptr<BettingStrategy> strat)
         : name(n), balance(bal), baseBet(bBet), strategy(std::move(strat)) {
     }
-    //viết hàm getName (lấy tên người chơi) getBalance (lấy số vốn hiện tại)
-    //Viết hàm getBets trả về 1 std::map (của cược, số tiền) người chơi sẽ đánh trong ván kế tiếp
-    // viết hàm updateBalance để update vốn người chơi
-    /*
-    
-    
-    
-    */
+    const std::string& getName() const {
+        return name;
+    }
+    double getBalance() const {
+        return balance;
+    }
+    std::map<Symbol, double> getBets() const {
+        return strategy->calculateBets(balance, baseBet, consecutiveLosses);
+    }
+    void updateBalance(double amount) {
+        balance += amount;
+        if (amount > 0) {
+            consecutiveLosses = 0;
+        }
+        else if (amount < 0) {
+            consecutiveLosses++;
+        }
+        if (balance < 0) {
+            balance = 0;
+        }
+    }
 };

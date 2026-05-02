@@ -9,14 +9,22 @@ private:
 
 public:
     House(const std::string& n, double bal) : name(n), balance(bal), initialBalance(bal) {}
-    //Viết hàm getName lấy tên nhà cái
-    //Viết hàm getBalance lấy vốn nhà cái hiện tại
-    // viết hàm getInitialBalance lấy vốn ban đầu nhà cái
-    // viết hàm updateBalance cập nhật số vốn nhà cái
-    // viết hàm isBankrupt kiểm tra nhà cái phá sản chưa
-    /*
-    
-    
-    
-    */
+    const std::string& getName() const {
+        return name;
+    }
+    double getBalance() const {
+        return balance;
+    }
+    double getInitialBalance() const {
+        return initialBalance;
+    }
+    void updateBalance(double amount) {
+        balance += amount;
+        if (balance < 0) {
+            balance = 0;
+        }
+    }
+    bool isBankrupt() const {
+        return balance <= 0;
+    }
 };

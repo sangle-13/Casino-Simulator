@@ -9,15 +9,16 @@ class ChungThuyStrategy : public BettingStrategy {
 public:
     std::map<Symbol, double> calculateBets(double balance, double baseBet, int losses) const override {
         std::map<Symbol, double> bets;
-        //viết logic cho chiến thuật chung thủy (mỗi lần thua cược x2 số tiền)
-        //đầu vào blance ( vốn hiện có) baseBet(tiền cược cố định) loses (số ván đã thua)
-        // đầu ra 1 std::map với cửa cược và tiền cược.
-        /*
-        
-        
-        
-        
-        */
+        double amount = baseBet * std::pow(2, losses);
+        amount = std::min(amount, balance);
+
+        if (amount > 0) {
+            thread_local std::mt19937 rng(std::random_device{}());
+            std::uniform_int_distribution<int> dist(0, 5);
+
+            Symbol randomSymbol = static_cast<Symbol>(dist(rng));
+            bets[randomSymbol] = amount;
+        }
         return bets;
     }
 };
@@ -26,16 +27,21 @@ class RaiThamStrategy : public BettingStrategy {
 public:
     std::map<Symbol, double> calculateBets(double balance, double baseBet, int losses) const override {
         std::map<Symbol, double> bets;
-        //viết logic cho chiến thuật rải thảm 
-        // đầu vào tương tự chiến thuật chung thủy
-        // đầu ra 1 std::map với 3 cặp, mỗi cặp gồm cửa cược và số tiền cược.
-        /*
-        
-        
-        
-        
-        
-        */
+        double splitBet = std::min(baseBet, balance / 3.0);
+        if (splitBet > 0) {
+            thread_local std::mt19937 rng(std::random_device{}());
+
+            std::vector<Symbol> allSymbols = {
+                Symbol::BAU, Symbol::CUA, Symbol::TOM,
+                Symbol::CA, Symbol::GA, Symbol::NAI
+            };
+
+            std::shuffle(allSymbols.begin(), allSymbols.end(), rng);
+
+            bets[allSymbols[0]] = splitBet;
+            bets[allSymbols[1]] = splitBet;
+            bets[allSymbols[2]] = splitBet;
+        }
         return bets;
     }
 };
