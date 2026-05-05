@@ -77,12 +77,12 @@ ax3.plot(van_range, mean_chungthuy, color='#d62728', linewidth=2.5, label='Kỳ 
 ax3.plot(van_range, mean_raitham, color='#1f77b4', linewidth=2.5, label='Kỳ vọng Rải Thảm')
 ax3.plot(van_range, mean_nhacai, color='black', linewidth=3, label='Kỳ Vọng Nhà Cái', linestyle='--')
 ax3.fill_between(van_range, mean_chungthuy, color='#d62728', alpha=0.1)
-ax3.set_title("ĐƯỜNG CONG KỲ VỌNG TRUNG BÌNH (EV)", fontsize=16, fontweight='bold', color='purple', pad=15)
+ax3.set_title("BIỂU ĐỒ SỐ DƯ TRUNG BÌNH THỰC NGHIỆM (SAMPLE MEAN)", fontsize=16, fontweight='bold', color='purple', pad=15)
 ax3.set_xlabel("Số lượng ván cược", fontsize=12)
 
 for ax in [ax1, ax2, ax3]:
     ax.axhline(0, color='black', linestyle='-', linewidth=1.5) 
-    ax.set_ylabel("Số dư trong ví (VNĐ)", fontsize=12)
+    ax.set_ylabel("Số dư trong ví (USD)", fontsize=12)
     ax.grid(True, linestyle=':', alpha=0.5)
 
 fig.suptitle('KỊCH BẢN 1: BẦU CUA - NHÀ CÁI VỐN NHỎ ', fontsize=22, fontweight='bold')
