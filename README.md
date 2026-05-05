@@ -88,4 +88,4 @@ pip install pandas matplotlib numpy
 >```
 > **Disclaimer:** This project is strictly for educational purposes and probability research. It does not encourage or promote gambling.
 
-**Author:** [GROUP 4]
+**Author:** [GROUP 6]
